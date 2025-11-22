@@ -45,14 +45,13 @@ deploy ./dist → quilt encode → walrus register → sui commit → bootstrap 
 
 ## Specs
 
-**Storage layer**: Walrus quilt encoding (multi-file → 1 blob)
-**Metadata layer**: Sui blockchain (ownership, epochs, blob refs)
-**Delivery layer**: Service Workers (browser-native proxy)
-**Bootstrap layer**: 2KB HTML+SW (self-hosting ready)
-
-**Security**: XSS escaping, no secrets in logs, offline-safe
-**Resilience**: Aggregator failover, exponential backoff, auto-recovery
-**Deployment**: `prepare` (offline signing) → `deploy` (broadcast)
+- **Storage**: Walrus quilt encoding (multi-file → 1 blob)
+- **Metadata**: Sui blockchain (ownership, epochs, blob refs)
+- **Delivery**: Service Workers (browser-native proxy)
+- **Bootstrap**: 2KB HTML+SW (self-hosting ready)
+- **Security**: XSS escaping, no secrets in logs, offline-safe
+- **Resilience**: Aggregator failover, exponential backoff, auto-recovery
+- **Deployment**: `prepare` (offline signing) → `deploy` (broadcast)
 
 ---
 
