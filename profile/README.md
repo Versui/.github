@@ -26,7 +26,7 @@ VersUI deploys static websites to **Walrus decentralized storage** (100+ nodes) 
 Storage Layer      → Walrus (100+ nodes, Byzantine fault-tolerant, erasure coding)
 Coordination Layer → Sui blockchain (metadata, ownership, routing)
 Access Layer       → Service Workers (browser-native, offline-first, direct fetch)
-Preview Layer      → Seal (encrypted previews, ephemeral deployment testing)
+Privacy Layer      → Seal (encrypted private previews, team-only access)
 ```
 
 **Result:** Censorship-resistant, offline-capable sites that survive infrastructure failures.
@@ -75,7 +75,8 @@ Preview Layer      → Seal (encrypted previews, ephemeral deployment testing)
 - **Bootstrap**: < 3KB HTML+SW (host anywhere - Vercel, S3, IPFS, HTTP server)
 - **Security**: XSS escaping, SHA-256 content verification, offline-safe
 - **Resilience**: Multi-aggregator failover, exponential backoff, auto-recovery
-- **Decentralization**: Fully decentralized across all layers (storage, metadata, access, previews)
+- **Privacy**: Seal encryption for private previews (team-only access with decrypt keys)
+- **Decentralization**: Fully decentralized across all layers (storage, metadata, access)
 
 ---
 
@@ -109,7 +110,7 @@ VersUI combines four existing technologies:
 - **Walrus** - Decentralized blob storage (100+ nodes, 1/3 fault tolerance, erasure coding)
 - **Sui** - Fast blockchain (sub-second finality, on-chain metadata, ownership)
 - **Service Workers** - Browser-native proxy (client-side routing, offline-first, since 2014)
-- **Seal** - Encrypted ephemeral storage (deploy previews, temporary testing without on-chain commits)
+- **Seal** - Privacy layer (encrypted storage for private previews, team-only access with decrypt keys)
 
 **Remove centralized infrastructure. Sites become indestructible.**
 
