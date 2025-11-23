@@ -26,6 +26,7 @@ VersUI deploys static websites to **Walrus decentralized storage** (100+ nodes) 
 Storage Layer      → Walrus (100+ nodes, Byzantine fault-tolerant, erasure coding)
 Coordination Layer → Sui blockchain (metadata, ownership, routing)
 Access Layer       → Service Workers (browser-native, offline-first, direct fetch)
+Preview Layer      → Seal (encrypted previews, ephemeral deployment testing)
 ```
 
 **Result:** Censorship-resistant, offline-capable sites that survive infrastructure failures.
@@ -62,7 +63,7 @@ Access Layer       → Service Workers (browser-native, offline-first, direct fe
 
 - **[versui-cli](https://github.com/Versui/versui-cli)** - Deploy tool (v0.1.5, 85 tests, 84% coverage)
 - **[versui-sw-plugin](https://github.com/Versui/versui-sw-plugin)** - Service Worker plugin (v0.1.0, 22 tests, 100% coverage)
-- **[versui-move](https://github.com/Versui/versui-move)** - Sui Move contracts (deployed on testnet)
+- **[versui-move](https://github.com/Versui/versui-move)** - Sui Move contracts
 
 ---
 
@@ -74,7 +75,7 @@ Access Layer       → Service Workers (browser-native, offline-first, direct fe
 - **Bootstrap**: < 3KB HTML+SW (host anywhere - Vercel, S3, IPFS, HTTP server)
 - **Security**: XSS escaping, SHA-256 content verification, offline-safe
 - **Resilience**: Multi-aggregator failover, exponential backoff, auto-recovery
-- **Decentralization**: Fully decentralized across all three layers (storage, metadata, access)
+- **Decentralization**: Fully decentralized across all layers (storage, metadata, access, previews)
 
 ---
 
@@ -83,13 +84,6 @@ Access Layer       → Service Workers (browser-native, offline-first, direct fe
 ```bash
 npm i -g @versui/cli
 versui deploy ./dist
-```
-
-Output:
-```
-✅ Site deployed!
-🌐 URL: https://abc123.versui.app
-📦 Object ID: 0xdef456...
 ```
 
 Bootstrap files output to `./bootstrap/` - host anywhere or use provided subdomain.
@@ -110,11 +104,12 @@ self.addEventListener('fetch', e => versui.handle(e))
 
 **Centralized gateways are single points of failure and trust assumptions. Static sites don't need servers - they need blobs and pointers.**
 
-VersUI combines three existing technologies:
+VersUI combines four existing technologies:
 
 - **Walrus** - Decentralized blob storage (100+ nodes, 1/3 fault tolerance, erasure coding)
 - **Sui** - Fast blockchain (sub-second finality, on-chain metadata, ownership)
 - **Service Workers** - Browser-native proxy (client-side routing, offline-first, since 2014)
+- **Seal** - Encrypted ephemeral storage (deploy previews, temporary testing without on-chain commits)
 
 **Remove centralized infrastructure. Sites become indestructible.**
 
