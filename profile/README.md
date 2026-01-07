@@ -55,7 +55,7 @@ Versui deploys static websites to decentralized infrastructure with no gateways,
 
 ### Smart Contracts (Testnet)
 
-**Package ID:** `0x2489609d5e6b754634d4ca892ab259222482f31596a13530fcc8110b5b2461cb`
+**Package ID:** `0xc3352e420352af5339cefd764c232e59553f02885628fdeb130e33cef7709ade`
 
 **Features:**
 - Derived objects for deterministic Site IDs (zero RPC lookups)
